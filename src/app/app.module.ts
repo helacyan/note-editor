@@ -9,6 +9,11 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { NotePageComponent } from './project/components/note-page/note-page.component'
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { ModalComponent } from './core/components/modal/modal.component';
+import { ReactiveFormsModule } from '@angular/forms'
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -19,13 +24,18 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     NotePageComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [{provide: MatDialogRef, useValue:{}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

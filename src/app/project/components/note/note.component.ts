@@ -12,8 +12,7 @@ export class NoteComponent implements OnInit {
 
   isEdit = true;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   toggleEdit(): void {
     this.isEdit = !this.isEdit

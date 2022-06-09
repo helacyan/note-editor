@@ -6,20 +6,22 @@ import studentsData from './../../../assets/json/data.json';
 })
 export class NoteService {
 
-
   constructor() {}
 
   content = ''
   tags: string[] = []
   data = studentsData
-  id: number = 1
-  dynamicContent = ''
+  id: number = 0
+  index: number = 0
 
-  getContent(newContent: string, tags: string[], id: number) {
+  getContent(newContent: string, tags: string[], id: number, index: number) {
     this.content = newContent
     this.tags = tags
     this.id = id;
-    (<HTMLInputElement>document.querySelector(".text-input")).value = this.content
+    this.index = index
+    if (<HTMLInputElement>document.querySelector(".text-input")) {
+      (<HTMLInputElement>document.querySelector(".text-input")).value = this.content
+    }
   }
 
   deleteTag(tagData: string) {
@@ -32,10 +34,24 @@ export class NoteService {
   }
 
   checkContent() {
-    console.log('checkContent')
-    console.log((<HTMLInputElement>document.querySelector(".text-input")).value);
     if (this.id) {
       studentsData[this.id - 1].content = (<HTMLInputElement>document.querySelector(".text-input")).value
     }
+  }
+
+  deleteNote() {
+    if (this.id) {
+      this.data = this.data.filter((note: any) => {
+        return note.id == this.id ? 0 : 1
+      });
+      (<HTMLInputElement>document.querySelector(".text-input")).value = ''
+      this.tags = []
+      this.content = ''
+      this.id = 0
+    }
+    this.data = this.data.map((note: any, i: number) => {
+      note.index = i
+      return note
+    })
   }
 }

@@ -2,6 +2,6 @@
   <label>Поиск по тегу</label>
   <input>
   <div class="list">
-    <div class="note" (click)="this.noteService.getContent(item.content, item.tags, item.id)" *ngFor="let item of this.noteService.data">{{item.title}}</div>
+    <div class="note" (click)="this.noteService.getContent(item.content, item.tags, item.id, item.index)" *ngFor="let item of this.noteService.data">{{item.title}}</div>
   </div>
 </div>

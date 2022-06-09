@@ -1,9 +1,10 @@
-
-<div class="toolbar">
-  <button (click)="toggleEdit()">edit</button>
-  <button>delete</button>
-</div>
-<div class="tags">
-  <p class="tag" (click)="this.noteService.deleteTag(item)" *ngFor="let item of this.noteService.tags">{{item}}</p>
-</div>
-<textarea (input)="this.noteService.checkContent()" [disabled]="isEdit ? true : false" class="text-input" placeholder="Type your text here...">{{this.noteService.data[this.noteService.id - 1].content}}</textarea>
+<ng-container *ngIf="this.noteService.data[this.noteService.index] && this.noteService.id > 0">
+  <div class="toolbar">
+    <button (click)="toggleEdit()">edit</button>
+    <button (click)="this.noteService.deleteNote()">delete</button>
+  </div>
+  <div class="tags">
+    <p class="tag" (click)="this.noteService.deleteTag(item)" *ngFor="let item of this.noteService.tags">{{item}}</p>
+  </div>
+  <textarea (input)="this.noteService.checkContent()" [disabled]="isEdit ? true : false" class="text-input" placeholder="Type your text here...">{{ this.noteService.data[this.noteService.index].content}}</textarea>
+</ng-container>
