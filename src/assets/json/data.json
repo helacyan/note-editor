@@ -1,0 +1,32 @@
+[
+  {
+    "title": "asd",
+    "content": "In this section, we will learn the use angular 7/8/9 so that we can show data from the Json file. Also, we are going to understand how we can read json files in angular 9. In the below example, we are using angular 8 to show the data of json in html table. We will use angular to generate json file. Then we will use created json file to display the data. So we are going to use the angular app to read json file data. #123",
+    "tags": ["#123", "#346","#845","#asbd","#xcbs","#seb","#dxb"],
+    "id": 1
+  },
+  {
+    "title": "zxc",
+    "content": "Suppose we need to use the json file to show our required data for the front end and also want to display it in a tabular format. In that case, we will use ngfor directives, which are used to display data in tabular. In our case, we also require to display data in angular applications. So we will use bootstrap. If we are using angular versions 6, 7, 8, 9, 10, and 11, we are able to easily show data from json file. In order to create the json file, we will follow some step by step process, which is described as follows:",
+    "tags": [],
+    "id": 2
+  },
+  {
+    "title": "wqeasas",
+    "content": "If the autocomplete attribute is not specified on a <textarea> element, then the browser uses the autocomplete attribute value of the <textarea> element's form owner. The form owner is either the <form> element that this <textarea> element is a descendant of or the form element whose id is specified by the form attribute of the input element. For more information, see the autocomplete attribute in <form>.",
+    "tags": [],
+    "id": 3
+  },
+  {
+    "title": "asbdasb",
+    "content": "The form element that the <textarea> element is associated with (its 'form owner'). The value of the attribute must be the id of a form element in the same document. If this attribute is not specified, the <textarea> element must be a descendant of a form element. This attribute enables you to place <textarea> elements anywhere within a document, not just as descendants of form elements.",
+    "tags": [],
+    "id": 4
+  },
+  {
+    "title": "trybrtb",
+    "content": "Lorem ipsum dolor sit amet, consect id elit, sed do eiusmod tempor incididunt ut lab et dolore magna aliqua. Ut enim ad minim ven fitness e a pos reprehender pariatur et",
+    "tags": [],
+    "id": 5
+  }
+]

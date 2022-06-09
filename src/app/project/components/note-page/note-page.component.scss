@@ -1,0 +1,17 @@
+.notePage {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.noteList {
+  width: 20vw;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid black;
+}
+
+.note {
+  width: 80vw;
+}
