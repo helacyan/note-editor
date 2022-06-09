@@ -14,6 +14,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { ModalComponent } from './core/components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input';
+import { TextInputHighlightModule } from 'angular-text-input-highlight';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     FooterComponent,
     NotePageComponent,
-    ModalComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    TextInputHighlightModule
   ],
   providers: [{provide: MatDialogRef, useValue:{}}],
   bootstrap: [AppComponent]

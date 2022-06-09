@@ -4,7 +4,29 @@
     <button (click)="this.noteService.deleteNote()">delete</button>
   </div>
   <div class="tags">
-    <p class="tag" (click)="this.noteService.deleteTag(item)" *ngFor="let item of this.noteService.tags">{{item}}</p>
+    <p class="tag" (click)="this.noteService.deleteTag(item)" (click)="highlightTags()" *ngFor="let item of this.noteService.tags">{{item}}</p>
   </div>
-  <textarea (input)="this.noteService.checkContent()" [disabled]="isEdit ? true : false" class="text-input" placeholder="Type your text here...">{{ this.noteService.data[this.noteService.index].content}}</textarea>
+  <div mwlTextInputHighlightContainer>
+    <textarea
+      placeholder="Type your text here..."
+      (input)="highlightTags()"
+      (click)="highlightTags()"
+      (input)="this.noteService.checkContent()"
+      [disabled]="isEdit ? true : false"
+      class="text-input"
+      mwlTextInputElement
+      [(ngModel)]="this.noteService.content"
+      #textarea>
+      {{ this.noteService.data[this.noteService.index].content}}
+    </textarea>
+    <mwl-text-input-highlight
+      [tags]="tags"
+      class="text-input"
+      [tagCssClass]=" !isEdit ? 'bg-blue' : 'bg-white'"
+      [textInputElement]="textarea"
+      (tagMouseEnter)="addDarkClass($event.target)"
+      (tagMouseLeave)="removeDarkClass($event.target)"
+      (tagClick)="tagClicked = $event.tag">
+  </mwl-text-input-highlight>
+  </div>
 </ng-container>

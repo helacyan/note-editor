@@ -1,8 +1,8 @@
 [
   {
     "title": "asd",
-    "content": "In this section, we will learn the use angular 7/8/9 so that we can show data from the Json file. Also, we are going to understand how we can read json files in angular 9. In the below example, we are using angular 8 to show the data of json in html table. We will use angular to generate json file. Then we will use created json file to display the data. So we are going to use the angular app to read json file data. #123",
-    "tags": ["#123", "#346","#845","#asbd","#xcbs","#seb","#dxb"],
+    "content": "In this section, we will learn the use angular 7/8/9 so that we can show data from the Json file. Also, we are going to understand how we can read json files in angular 9. In the below example, we are using angular 8 to show the data of json in html table. We will use angular to generate json file. Then we will use created json file to display the data. So we are going to use the angular app to read json file data",
+    "tags": [],
     "id": 1,
     "index": 0
   },

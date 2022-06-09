@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import studentsData from './../../../assets/json/data.json';
+import notesData from './../../../assets/json/data.json';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +9,14 @@ export class NoteService {
   constructor() {}
 
   content = ''
-  tags: string[] = []
-  data = studentsData
+  tags: string[] | null = []
+  data = notesData
   id: number = 0
   index: number = 0
 
-  getContent(newContent: string, tags: string[], id: number, index: number) {
+  getContent(newContent: string, id: number, index: number) {
     this.content = newContent
-    this.tags = tags
+    this.tags = newContent.match(/#[a-z0-9]+/gi)
     this.id = id;
     this.index = index
     if (<HTMLInputElement>document.querySelector(".text-input")) {
@@ -31,11 +31,15 @@ export class NoteService {
       })
       this.tags = this.data[this.id - 1].tags
     }
+    notesData[this.id - 1].content = notesData[this.id - 1].content.replaceAll(tagData,'').trim();
+    (<HTMLInputElement>document.querySelector(".text-input")).value = notesData[this.id - 1].content.trim()
   }
 
   checkContent() {
     if (this.id) {
-      studentsData[this.id - 1].content = (<HTMLInputElement>document.querySelector(".text-input")).value
+      notesData[this.id - 1].content = (<HTMLInputElement>document.querySelector(".text-input")).value
+      this.tags = notesData[this.id - 1].content.match(/#[a-z0-9]+/gi)
+      this.data[this.id - 1].tags = notesData[this.id - 1].content.match(/#[a-z0-9]+/gi);
     }
   }
 
@@ -54,4 +58,6 @@ export class NoteService {
       return note
     })
   }
+
+
 }
