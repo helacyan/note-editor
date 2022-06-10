@@ -20,6 +20,7 @@ export class NoteComponent implements OnInit {
 
   toggleEdit(): void {
     this.isEdit = !this.isEdit
+    this.highlightTags();
   }
 
   tags: HighlightTag[] = [];
@@ -35,6 +36,7 @@ export class NoteComponent implements OnInit {
           start: hashtag.index,
           end: hashtag.index + hashtag[1].length
         },
+        cssClass: !this.isEdit ?  'bg-blue' : 'bg-white',
         data: hashtag[1]
       });
     }
@@ -52,7 +54,7 @@ export class NoteComponent implements OnInit {
               start: mention.index,
               end: mention.index + targetWord.length
             },
-            cssClass: 'bg-pink',
+            cssClass: !this.isEdit ? 'bg-pink' : 'bg-white',
             data: mention[0]
           });
         }

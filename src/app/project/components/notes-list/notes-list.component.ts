@@ -8,8 +8,11 @@ import { NoteService } from '../../services/note.service';
 })
 export class NotesListComponent implements OnInit {
 
+  search: string = '';
+
   constructor(public noteService: NoteService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 }

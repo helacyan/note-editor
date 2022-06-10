@@ -1,10 +1,12 @@
-<ng-container *ngIf="this.noteService.data[this.noteService.index] && this.noteService.id > 0">
+<ng-container сlass="container" *ngIf="this.noteService.data[this.noteService.index] && this.noteService.id > 0">
   <div class="toolbar">
-    <button (click)="toggleEdit()">edit</button>
-    <button (click)="this.noteService.deleteNote()">delete</button>
+    <button class="btn" mat-raised-button color="primary"  (click)="toggleEdit()">edit</button>
+    <button class="btn" mat-flat-button (click)="this.noteService.deleteNote()">delete</button>
+    <h1 class="mode">{{!isEdit ? "Edit mode" : "Preview mode"}}</h1>
   </div>
   <div class="tags">
-    <p class="tag" (click)="this.noteService.deleteTag(item)" (click)="highlightTags()" *ngFor="let item of this.noteService.tags">{{item}}</p>
+    <p class="title">Tags:</p>
+    <p class="tag" (click)="this.noteService.deleteTag(item)" (click)="highlightTags()" *ngFor="let item of this.noteService.tags">{{item}}  &#10007;</p>
   </div>
   <div mwlTextInputHighlightContainer>
     <textarea

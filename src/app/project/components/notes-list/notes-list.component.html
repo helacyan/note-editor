@@ -1,7 +1,7 @@
 <div class="sidebar">
-  <label>Поиск по тегу</label>
-  <input>
+  <label>Фильтр заметок  по тегу</label>
+  <input type="text" [(ngModel)]="search"/>
   <div class="list">
-    <div class="note" (click)="this.noteService.getContent(item.content, item.id, item.index)" *ngFor="let item of this.noteService.data">{{item.title}}</div>
+    <div class="note" (click)="this.noteService.getContent(item.content, item.id, item.index)" *ngFor="let item of this.noteService.data | filter:search">{{item.title}}</div>
   </div>
 </div>

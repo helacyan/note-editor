@@ -9,3 +9,12 @@ body {
   min-height: 100%;
   position:relative;
 }
+
+h1 {
+  margin-bottom: 0 !important;
+}
+
+@font-face {
+  font-family: "AlphaWood";
+  src: local("AlphaWood"), url("./assets/fonts/Alphawood-K77p.ttf") format("truetype");
+}

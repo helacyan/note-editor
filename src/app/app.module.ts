@@ -15,7 +15,8 @@ import { ModalComponent } from './core/components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule } from '@angular/material/input';
 import { TextInputHighlightModule } from 'angular-text-input-highlight';
-
+import { FilterPipe } from './project/pipes/filter.pipe';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TextInputHighlightModule } from 'angular-text-input-highlight';
     HeaderComponent,
     FooterComponent,
     NotePageComponent,
-    ModalComponent
+    ModalComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { TextInputHighlightModule } from 'angular-text-input-highlight';
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
-    TextInputHighlightModule
+    TextInputHighlightModule,
+    MatButtonModule
   ],
   providers: [{provide: MatDialogRef, useValue:{}}],
   bootstrap: [AppComponent]
