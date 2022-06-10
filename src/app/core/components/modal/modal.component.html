@@ -1,10 +1,15 @@
 <h2 mat-dialog-title>Enter new note title:</h2>
 
-<div mat-dialog-content>
-  <input [formControl]="name" cdkFocusInitial>
-</div>
+<mat-form-field class="example-full-width" appearance="fill" color="warm" floatLabel="never">
+    <mat-label>Title</mat-label>
+    <input matInput [formControl]="name" cdkFocusInitial>
+    <mat-icon matSuffix style="font-size: 1.0em"> title</mat-icon>
 
+</mat-form-field>
+<div class="error" *ngIf="name.errors">
+  Length should be 3 or more characters.
+</div>
 <div mat-dialog-actions class="modal-buttons">
-  <button mat-button class="modal-btn" (click)="close()" >close</button>
-  <button mat-button class="modal-btn" (click)="continue()" >Add note</button>
+  <button mat-button class="modal-btn" (click)="close()">close</button>
+  <button [disabled]="name.errors || !name.value ? true : false" mat-button class="modal-btn" (click)="continue()">Add note</button>
 </div>

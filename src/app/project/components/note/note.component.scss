@@ -48,6 +48,12 @@
   align-items: center;
 }
 
+.mode {
+  color: #333;
+  min-width: 2vw;
+  padding-top: 10px;
+}
+
 .mat-typography p {
   margin-left: 10px;
   background-color: #86c5da;
@@ -62,6 +68,17 @@
 
 .title {
   cursor: auto !important;
+}
+
+.noteTitle {
+  text-align: center;
+  margin: 0 !important;
+  background-color: transparent !important;
+  color: rgba(75, 44, 44, 0.616) !important;
+  padding-top: 10px;
+  margin-left: 15px;
+  font-size: 3vh;
+  cursor: default !important;
 }
 
 .bg-blue {

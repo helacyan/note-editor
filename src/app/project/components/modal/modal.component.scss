@@ -1,0 +1,23 @@
+.modal-btn {
+  width: 12vw;
+  height: 5vh;
+  background-color: transparent;
+  color: rgb(211, 185, 185);
+  font-family: "AlphaWood";
+  font-size: 4vh;
+  border: 0;
+  cursor: pointer;
+  margin-right: 2vw;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  color: rgb(240, 116, 116);
+  font-family: "Lucky";
+  font-size: 4vh;
+}

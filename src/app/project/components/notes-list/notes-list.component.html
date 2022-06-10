@@ -1,7 +1,12 @@
 <div class="sidebar">
-  <label>Фильтр заметок  по тегу</label>
-  <input type="text" [(ngModel)]="search"/>
+  <mat-form-field class="example-full-width" appearance="fill" color="warm" floatLabel="never">
+    <mat-label>Filter by tag</mat-label>
+    <input matInput type="text" [(ngModel)]="search"/>
+    <mat-icon matSuffix style="font-size: 1.0em">search</mat-icon>
+  </mat-form-field>
   <div class="list">
-    <div class="note" (click)="this.noteService.getContent(item.content, item.id, item.index)" *ngFor="let item of this.noteService.data | filter:search">{{item.title}}</div>
+    <div class="note" (click)="this.noteService.getContent(item.content, item.id, item.index, item.title)" *ngFor="let item of this.noteService.data | filter:search">
+      {{item.title}}
+    </div>
   </div>
 </div>

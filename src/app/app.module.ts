@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { TextInputHighlightModule } from 'angular-text-input-highlight';
 import { FilterPipe } from './project/pipes/filter.pipe';
 import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatInputModule,
     TextInputHighlightModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [{provide: MatDialogRef, useValue:{}}],
   bootstrap: [AppComponent]

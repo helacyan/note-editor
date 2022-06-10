@@ -40,14 +40,14 @@ export class NoteComponent implements OnInit {
         data: hashtag[1]
       });
     }
-    let mention: any;
+    let mention: RegExpExecArray | null;
     this.noteService.tags?.map( el => {
       let targetWord = el.split('#')[1]
       let re = new RegExp(targetWord, "gm");
       while ((mention = re.exec(this.noteService.content))) {
-        if (this.noteService.content.charAt(mention.index - 1) !== '#') {
+        if (this.noteService.content.charAt(mention.index - 1) !== '#' && this.noteService.content.charAt(mention.index - 1) == ' ') {
           this.tags = this.tags.filter(tag => {
-            return tag.indices.start == mention.index ? 0 : 1
+            return mention ? tag.indices.start == mention.index ? 0 : 1 : 0
            })
           this.tags.push({
             indices: {

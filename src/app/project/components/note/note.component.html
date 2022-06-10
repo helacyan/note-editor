@@ -1,8 +1,9 @@
 <ng-container сlass="container" *ngIf="this.noteService.data[this.noteService.index] && this.noteService.id > 0">
   <div class="toolbar">
-    <button class="btn" mat-raised-button color="primary"  (click)="toggleEdit()">edit</button>
+    <button class="btn" mat-flat-button color="basic"  (click)="toggleEdit()">edit</button>
     <button class="btn" mat-flat-button (click)="this.noteService.deleteNote()">delete</button>
-    <h1 class="mode">{{!isEdit ? "Edit mode" : "Preview mode"}}</h1>
+    <h1 class="mode"><mat-icon>{{!isEdit ? "edit" : "portrait"}}</mat-icon></h1>
+    <p class="noteTitle">{{this.noteService.title}}</p>
   </div>
   <div class="tags">
     <p class="title">Tags:</p>
