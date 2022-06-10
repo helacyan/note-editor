@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NoteService } from '../../services/note.service';
 
 @Component({
@@ -6,13 +6,10 @@ import { NoteService } from '../../services/note.service';
   templateUrl: './notes-list.component.html',
   styleUrls: ['./notes-list.component.scss']
 })
-export class NotesListComponent implements OnInit {
+export class NotesListComponent {
 
   search: string = '';
 
   constructor(public noteService: NoteService) { }
-
-  ngOnInit(): void {
-  }
 
 }

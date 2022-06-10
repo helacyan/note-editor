@@ -3,7 +3,6 @@ import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { INoteItem } from 'src/app/project/models/note.model';
 import { NoteService } from 'src/app/project/services/note.service';
-import notesData from './../../../../assets/json/data.json';
 
 @Component({
   selector: 'app-modal',

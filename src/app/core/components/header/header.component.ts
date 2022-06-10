@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalService } from '../../services/modal/modal.service';
 import { ModalComponent } from '../modal/modal.component';
@@ -8,13 +8,9 @@ import { ModalComponent } from '../modal/modal.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(private dialog: MatDialog, public modalService: ModalService) {}
-
-  ngOnInit(): void {
-
-  }
 
   openDialog() {
     const dialogConfig = new MatDialogConfig();
